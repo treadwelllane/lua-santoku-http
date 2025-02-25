@@ -187,7 +187,7 @@ end
 
 -- TODO: extend to support ws
 -- TODO: allow match/on_request for intercepting pre-request
-M.http_client = function ()
+M.client = function ()
   local events = asy.events()
   return {
     on = events.on,
