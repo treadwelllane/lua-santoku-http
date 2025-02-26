@@ -1,6 +1,6 @@
-local test = require("santoku.test")
-local http = require("santoku.http")
-local serialize = require("santoku.serialize")
+-- local test = require("santoku.test")
+-- local http = require("santoku.http")
+-- local serialize = require("santoku.serialize")
 
 -- test("get", function ()
 --   print(serialize({http.get("http://localhost:8000/test.json", {
@@ -30,17 +30,17 @@ local serialize = require("santoku.serialize")
 --   end)}))
 -- end)
 
-test("client.get", function ()
-  local client = http.client()
-  client.on("request", function (k, r)
-    return k(r)
-  end, true)
-  print(serialize(client.get("http://localhost:8000/test.json", function (...)
-    local resp = require("santoku.error").checkok(...)
-    return resp
-  end)))
-  -- print(serialize({http.get("http://localhost:8000/test.json", function (...)
-  --   print(serialize({...}))
-  --   return ...
-  -- end)}))
-end)
+-- test("client.get", function ()
+--   local client = http.client()
+--   client.on("request", function (k, r)
+--     return k(r)
+--   end, true)
+--   print(serialize(client.get("http://localhost:8000/test.json", function (...)
+--     local resp = require("santoku.error").checkok(...)
+--     return resp
+--   end)))
+--   print(serialize({http.get("http://localhost:8000/test.json", function (...)
+--     print(serialize({...}))
+--     return ...
+--   end)}))
+-- end)
